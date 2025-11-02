@@ -1,0 +1,127 @@
+#header {
+    height: 3;
+    background: $surface;
+    content-align: center middle;
+}
+
+#footer {
+    height: 2;
+    background: $surface;
+    content-align: center middle;
+}
+
+#connection_bar {
+    height: 5;
+    background: $background;
+    padding: 1 2;
+}
+#connection_select{
+    width: 70%;
+    content-align: center middle;
+}
+
+#connect_button, #disconnect_button, #view_settings_button {
+    width: 12;
+    margin-left: 2;
+    content-align: center middle;
+}
+
+#main_area {
+    height: 1fr;
+    background: $background;
+}
+
+#address_space {
+    width: auto; 
+    min-width: 30;   
+    max-width: 100;
+    background: $surface;
+    border: tall $primary-background-darken-3;
+    content-align: left top;
+    padding: 1 2;
+}
+
+#data_view {
+    width: 1fr;
+    min-width: 40;
+    background: $surface;
+    border: tall $primary-background-darken-3;
+    content-align: center middle;
+}
+
+#attributes_view {
+    width: auto;
+    min-width: 20;
+    max-width: 100;
+    background: $surface;
+    border: tall $primary-background-darken-3;
+    content-align: center middle;
+    padding: 1 2;
+}
+
+#log_view {
+    margin-top: 1;
+    height: auto;
+    min-height: 3;
+    max-height: 9;
+    background: $surface;
+    border: tall $primary-background-darken-3;
+    content-align: left top;
+}
+
+#address_space:disabled,
+#data_view:disabled,
+#attributes_view:disabled {
+    opacity: 60%;
+}
+
+SettingsScreen {
+    align: center middle;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+SettingsScreen > Container {
+    background: $surface;
+    border: tall $primary-background-darken-3;
+    width: 80;
+    height: auto;
+    min-height: 10;
+    max-height: 15;
+    padding-top: 0;
+    padding-bottom: 1;
+    padding-left: 1;
+    padding-right: 1;
+}
+
+SettingsScreen .modal-header {
+    height: 2;
+    max-height: 2;
+    width: 100%;
+}
+
+SettingsScreen .modal-body {
+    width: 100%;
+    height: 8;
+    margin-top: 1;
+    min-height: 6;
+    padding: 0;
+    overflow: auto;
+}
+
+SettingsScreen .button-container {
+    dock: bottom;
+    align: center middle;
+    height: 3;
+    max-height: 3;
+    width: 100%;
+    margin-top: 1;
+    background: $surface;
+}
+
+SettingsScreen .close-button {
+    margin: 0 1;
+    min-width: 10;
+    height: auto;
+    padding: 0 1;
+    background: $surface;
+}

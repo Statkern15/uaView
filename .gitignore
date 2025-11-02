@@ -1,0 +1,109 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg
+*.whl
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Pyenv
+.python-version
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+pytestdebug.log
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer / build artifacts
+.installed.cfg
+*.egg-info
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# pyright
+typings/
+
+# PEP 582
+__pypackages__/
+
+# IDEs and editors
+.vscode/
+.idea/
+.github/
+
+# Environments / secrets
+.env
+.env.*.local
+.env.local
+venv/
+credentials/
+*.pem
+*.key
+
+# Logs and runtime files
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Static / build artifacts
+staticfiles/
+media/
+__pycache__/
+*.cache
+
+# Docker
+docker-compose.override.yml
+
+# Excalidraw files
+.excalidraw
+
+# ruff
+.ruff_cache/
+
+# local mock data
+mock/
+
+scripts/
+.dockerignore
+Dockerfile

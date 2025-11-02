@@ -1,0 +1,19 @@
+{
+    "connection_1": {
+        "endpoint_url": "opc.tcp://localhost:48040",
+        "security_policy": "None",
+        "security_mode": "None"
+    },
+    "connection_2": {
+        "endpoint_url": "opc.tcp://localhost:48040",
+        "security_policy": "None",
+        "security_mode": "None"
+    },
+    "connection_3": {
+        "endpoint_url": "opc.tcp://localhost:48040",
+        "security_policy": "Basic256Sha256",
+        "security_mode": "SignAndEncrypt",
+        "user_name": "user2",
+        "password": "password456"
+    }
+}
