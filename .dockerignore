@@ -1,0 +1,111 @@
+# ==========================================
+# Python cache and build artifacts
+# ==========================================
+*__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+
+# ==========================================
+# Virtual environments
+# ==========================================
+venv/
+.env/
+.env
+.venv/
+*.env
+
+# ==========================================
+# Build / packaging
+# ==========================================
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# Git & version control
+# ==========================================
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+.github/
+
+# ==========================================
+# Docker
+# ==========================================
+Dockerfile
+.dockerignore
+
+# ==========================================
+# IDE / editor configs
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# ==========================================
+# OS-specific files
+# ==========================================
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Test, coverage, and docs
+# ==========================================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+docs/_build/
+site/
+reports/
+
+# ==========================================
+# Temporary or runtime artifacts
+# ==========================================
+tmp/
+temp/
+*.tmp
+*.log
+logs/
+*.pid
+
+# ==========================================
+# Textual-specific runtime or preview artifacts
+# ==========================================
+.textual/
+.textual_cache/
+.textual_logs/
+screenshots/
+
+# ==========================================
+# Custom ignores
+# ==========================================
+scripts/
+uaView/mock/
+

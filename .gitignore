@@ -105,5 +105,6 @@ docker-compose.override.yml
 mock/
 
 scripts/
-.dockerignore
-Dockerfile
+
+docker-compose.dev.yaml
+docker-compose.yaml
