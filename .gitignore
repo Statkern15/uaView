@@ -68,7 +68,7 @@ __pypackages__/
 # IDEs and editors
 .vscode/
 .idea/
-.github/
+.github/*.md
 
 # Environments / secrets
 .env
