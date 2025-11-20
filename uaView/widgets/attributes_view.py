@@ -15,6 +15,9 @@ class AttributesView(DataTable):
         Expects rows in the form [("Attribute", "Value"), ...]. If the first
         row looks like headers, it will be skipped to avoid duplicating headers.
         """
+        # Only clear if the table has existing rows
+        if self.row_count > 0:
+            self.clear()
         if not rows:
             return
         start_index = 0
