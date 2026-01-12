@@ -1,7 +1,10 @@
 import asyncio
 from datetime import datetime
-from textual import log
+
 from asyncua import Client, ua
+from textual import log
+
+from .client_config import configure_opc_client
 
 
 class SubHandler:
@@ -59,21 +62,14 @@ class UAViewerClient:
         self.config = config
         self.client = Client(self.config["endpoint_url"])
 
-        # Set security if specified
-        security_policy = self.config.get("security_policy", "None")
-        security_mode = self.config.get("security_mode", "None")
-        self.client.set_security_string(f"{security_policy},{security_mode}")
         self.connected = False
 
     async def connect(self):
         """Connect to the OPC-UA server and authenticate if credentials provided."""
+        # configure the client first
+        await configure_opc_client(opc_client=self.client, opc_config=self.config)
+        # connect
         await self.client.connect()
-
-        # Authenticate with username/password if provided
-        username = self.config.get("user_name")
-        password = self.config.get("password")
-        if username and password:
-            await self.client.set_user(username, password)
 
         self.connected = True
 
