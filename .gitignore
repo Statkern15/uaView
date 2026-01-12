@@ -103,8 +103,8 @@ docker-compose.override.yml
 
 # local mock data
 mock/
-
 scripts/
-
 docker-compose.dev.yaml
 docker-compose.yaml
+.local*
+*.tar
