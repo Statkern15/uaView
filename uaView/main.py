@@ -133,13 +133,21 @@ class uaViewer(App):
         config = self.settings[selected_connection]
 
         try:
-            self._log_message(f"Connecting to {config['endpoint_url']}...")
+            self._log_message(f"[DEBUG] Preparing to instantiate UAViewerClient with config: {config}")
+            try:
+                self.ua_client = UAViewerClient(config)
+                self._log_message("[DEBUG] UAViewerClient instantiated successfully.")
+            except Exception as inst_exc:
+                self._log_message(f"[ERROR] UAViewerClient instantiation failed: {inst_exc}")
+                raise
 
-            # Create and connect the UA client
-            self.ua_client = UAViewerClient(config)
-            await self.ua_client.connect()
-
-            self._log_message(f"Connected to {selected_connection}")
+            try:
+                self._log_message(f"[DEBUG] Attempting to connect to {config['endpoint_url']}...")
+                await self.ua_client.connect()
+                self._log_message(f"Connected to {selected_connection}")
+            except Exception as conn_exc:
+                self._log_message(f"[ERROR] UAViewerClient connection failed: {conn_exc}")
+                raise
 
             # Update button states
             self.query_one("#connect_button", Button).disabled = True

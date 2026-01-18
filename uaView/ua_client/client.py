@@ -53,6 +53,7 @@ class UAViewerClient:
     """Client for connecting to and interacting with OPC-UA servers."""
 
     def __init__(self, config: dict):
+        log.info(f"[UAViewerClient] Initializing with config: {config}")
         """Initialize the client with connection configuration.
 
         Args:
@@ -60,23 +61,43 @@ class UAViewerClient:
             endpoint_url, security_policy, security_mode, etc.
         """
         self.config = config
-        self.client = Client(self.config["endpoint_url"])
+        try:
+            self.client = Client(self.config["endpoint_url"])
+            log.info(f"[UAViewerClient] Client object created for endpoint: {self.config['endpoint_url']}")
+        except Exception as e:
+            log.error(f"[UAViewerClient] Failed to create Client: {e}")
+            raise
 
         self.connected = False
 
     async def connect(self):
         """Connect to the OPC-UA server and authenticate if credentials provided."""
-        # configure the client first
-        await configure_opc_client(opc_client=self.client, opc_config=self.config)
-        # connect
-        await self.client.connect()
-
+        log.info("[UAViewerClient] Configuring OPC client...")
+        try:
+            await configure_opc_client(opc_client=self.client, opc_config=self.config)
+            log.info("[UAViewerClient] OPC client configured.")
+        except Exception as e:
+            log.error(f"[UAViewerClient] configure_opc_client failed: {e}")
+            raise
+        try:
+            log.info("[UAViewerClient] Connecting to OPC-UA server...")
+            await self.client.connect()
+            log.info("[UAViewerClient] Connected to OPC-UA server.")
+        except Exception as e:
+            log.error(f"[UAViewerClient] Client connect failed: {e}")
+            raise
         self.connected = True
 
     async def disconnect(self):
         """Disconnect from the OPC-UA server."""
         if self.connected:
-            await self.client.disconnect()
+            try:
+                log.info("[UAViewerClient] Disconnecting from OPC-UA server...")
+                await self.client.disconnect()
+                log.info("[UAViewerClient] Disconnected.")
+            except Exception as e:
+                log.error(f"[UAViewerClient] Disconnect failed: {e}")
+                raise
             self.connected = False
 
     async def read_node_value(self, node_id):

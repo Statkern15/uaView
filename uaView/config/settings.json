@@ -1,6 +1,6 @@
 {
     "connection_1": {
-        "endpoint_url": "opc.tcp://localhost:48040",
+        "endpoint_url": "opc.tcp://DESKTOP-PGSLL9U:48010",
         "security_policy": "None",
         "security_mode": "None"
     },
